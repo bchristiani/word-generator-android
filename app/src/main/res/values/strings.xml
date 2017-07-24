@@ -6,4 +6,5 @@
     <string name="et_hint_alphabet">Alphabet *</string>
     <string name="et_hint_word_length">Wortlänge *</string>
     <string name="iv_description">Sprache</string>
+    <string name="toast_quit_app">Nochmaliges Tippen beendet die App</string>
 </resources>
