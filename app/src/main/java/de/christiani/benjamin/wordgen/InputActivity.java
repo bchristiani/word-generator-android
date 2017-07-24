@@ -1,5 +1,6 @@
 package de.christiani.benjamin.wordgen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -22,9 +23,7 @@ public class InputActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_search);
-        fab.setOnClickListener((view) -> {
-            Toast.makeText(getApplicationContext(), "Do something useful", Toast.LENGTH_SHORT).show();
-        });
+        fab.setOnClickListener((view) -> startActivity(new Intent(getApplicationContext(), ResultActivity.class)));
     }
 
     @Override
