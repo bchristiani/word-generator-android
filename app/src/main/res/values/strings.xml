@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WordGen</string>
+    <string name="app_name">Word Generator</string>
     <string name="action_settings">Einstellungen</string>
     <string name="alphabet_de">abcdefghijklmnopqrstuvwxyzüöäßABCDEFGHIJKLMNOPQRSTUVWXYZÜÖÄ</string>
     <string name="tv_required">* Pflichtfeld</string>
