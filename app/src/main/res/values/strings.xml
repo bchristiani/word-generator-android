@@ -9,4 +9,27 @@
     <string name="toast_quit_app">Nochmaliges Tippen beendet die App</string>
     <string name="title_activity_result">ResultActivity</string>
     <string name="toolbar_title_result">Ergebnisse</string>
+
+    <string-array name="results">
+        <item>Ergebnis 1</item>
+        <item>Ergebnis 2</item>
+        <item>Ergebnis 3</item>
+        <item>Ergebnis 4</item>
+        <item>Ergebnis 5</item>
+        <item>Ergebnis 6</item>
+        <item>Ergebnis 7</item>
+        <item>Ergebnis 8</item>
+        <item>Ergebnis 9</item>
+        <item>Ergebnis 10</item>
+        <item>Ergebnis 11</item>
+        <item>Ergebnis 12</item>
+        <item>Ergebnis 13</item>
+        <item>Ergebnis 14</item>
+        <item>Ergebnis 15</item>
+        <item>Ergebnis 16</item>
+        <item>Ergebnis 17</item>
+        <item>Ergebnis 18</item>
+        <item>Ergebnis 19</item>
+        <item>Ergebnis 20</item>
+    </string-array>
 </resources>
