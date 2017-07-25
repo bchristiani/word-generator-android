@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".InputActivity"
+            android:name=".activities.InputActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
@@ -21,17 +21,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ResultActivity"
+            android:name=".activities.ResultActivity"
             android:label="@string/title_activity_result"
-            android:parentActivityName=".InputActivity"
+            android:parentActivityName=".activities.InputActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".InputActivity">
+            android:parentActivityName=".activities.InputActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.christiani.benjamin.wordgen.InputActivity" />
+                android:value="de.christiani.benjamin.wordgen.activities.InputActivity" />
         </activity>
     </application>
 

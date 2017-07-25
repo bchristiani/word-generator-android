@@ -1,9 +1,11 @@
-package de.christiani.benjamin.wordgen;
+package de.christiani.benjamin.wordgen.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
+
+import de.christiani.benjamin.wordgen.fragments.SettingsFragment;
 
 
 public class SettingsActivity extends AppCompatPreferenceActivity {

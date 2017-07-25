@@ -1,9 +1,11 @@
-package de.christiani.benjamin.wordgen;
+package de.christiani.benjamin.wordgen.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import de.christiani.benjamin.wordgen.R;
 
 public class ResultActivity extends AppCompatActivity {
 

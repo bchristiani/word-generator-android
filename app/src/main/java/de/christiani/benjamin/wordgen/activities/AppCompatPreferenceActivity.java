@@ -1,4 +1,4 @@
-package de.christiani.benjamin.wordgen;
+package de.christiani.benjamin.wordgen.activities;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

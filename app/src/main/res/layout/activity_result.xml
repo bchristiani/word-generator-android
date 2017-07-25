@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.christiani.benjamin.wordgen.ResultActivity"
+    tools:context="de.christiani.benjamin.wordgen.activities.ResultActivity"
     android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/resultFragment"
-        android:name="de.christiani.benjamin.wordgen.ResultFragment"
+        android:name="de.christiani.benjamin.wordgen.fragments.ResultFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

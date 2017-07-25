@@ -1,4 +1,4 @@
-package de.christiani.benjamin.wordgen;
+package de.christiani.benjamin.wordgen.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import de.christiani.benjamin.wordgen.R;
 
 public class InputActivity extends AppCompatActivity {
 
