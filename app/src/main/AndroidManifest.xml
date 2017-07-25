@@ -22,9 +22,17 @@
         </activity>
         <activity
             android:name=".ResultActivity"
-            android:parentActivityName=".InputActivity"
             android:label="@string/title_activity_result"
+            android:parentActivityName=".InputActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".InputActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.christiani.benjamin.wordgen.InputActivity" />
+        </activity>
     </application>
 
 </manifest>

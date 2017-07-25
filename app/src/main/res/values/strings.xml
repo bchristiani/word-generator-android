@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Word Generator</string>
+    <string name="title_activity_settings">Einstellungen</string>
     <string name="action_settings">Einstellungen</string>
     <string name="alphabet_de">abcdefghijklmnopqrstuvwxyzüöäßABCDEFGHIJKLMNOPQRSTUVWXYZÜÖÄ</string>
     <string name="tv_required">* Pflichtfeld</string>
@@ -32,4 +33,31 @@
         <item>Ergebnis 19</item>
         <item>Ergebnis 20</item>
     </string-array>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_title_dictionary">Wörterbuch</string>
+    <string-array name="pref_dictionary_titles">
+        <item>Deutsch</item>
+    </string-array>
+    <string-array name="pref_dictionary_values">
+        <item>1</item>
+    </string-array>
+    <string name="pref_default_value_dictionary">1</string>
+
+    <string name="pref_title_limit">Maximal anzuzeigende Wörter</string>
+    <string-array name="pref_limit_titles">
+        <item>50</item>
+        <item>100</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>Kein Limit</item>
+    </string-array>
+    <string-array name="pref_limit_values">
+        <item>50</item>
+        <item>100</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>-1</item>
+    </string-array>
+    <string name="pref_default_value_limit">50</string>
 </resources>
