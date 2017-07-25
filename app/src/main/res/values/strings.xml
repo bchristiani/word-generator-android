@@ -10,6 +10,7 @@
     <string name="toast_quit_app">Nochmaliges Tippen beendet die App</string>
     <string name="title_activity_result">ResultActivity</string>
     <string name="toolbar_title_result">Wörter</string>
+    <string name="progress_dialog_message">Bitte Warten...</string>
 
     <string-array name="results">
         <item>Ergebnis 1</item>

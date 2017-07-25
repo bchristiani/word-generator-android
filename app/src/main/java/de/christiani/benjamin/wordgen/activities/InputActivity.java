@@ -1,8 +1,11 @@
 package de.christiani.benjamin.wordgen.activities;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +19,8 @@ public class InputActivity extends AppCompatActivity {
 
     private static final int TIME_INTERVAL = 2000;
     private boolean doubleBackToQuitPressedOnce = false;
+    private ProgressDialog progressDialog;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +29,17 @@ public class InputActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_search);
-        fab.setOnClickListener((view) -> startActivity(new Intent(getApplicationContext(), ResultActivity.class)));
+        this.progressDialog = this.createProgressDialog();
+        this.handler = new Handler();
+
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_search);
+        fab.setOnClickListener((view) -> {
+            this.progressDialog.show();
+            this.handler.postDelayed(() -> {
+                this.progressDialog.dismiss();
+                startActivity(new Intent(getApplicationContext(), ResultActivity.class));
+            }, TIME_INTERVAL);
+        });
     }
 
     @Override
@@ -60,5 +74,12 @@ public class InputActivity extends AppCompatActivity {
         new Handler().postDelayed(
                 () -> doubleBackToQuitPressedOnce = false
                 , TIME_INTERVAL);
+    }
+
+    private ProgressDialog createProgressDialog() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage(getString(R.string.progress_dialog_message));
+        return progressDialog;
     }
 }
