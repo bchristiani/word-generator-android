@@ -2,8 +2,10 @@ package de.christiani.benjamin.wordgen.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -25,11 +27,13 @@ import de.christiani.benjamin.wordgen.common.form.TextInputElementWatcher;
 
 public class InputActivity extends AppCompatActivity {
 
+    public static final String KEY_PREF_ALPHABET = "pref_alphabet";
+    public static final String KEY_PREF_WORD_SIZE = "pref_word_size";
     private static final int TIME_INTERVAL = 2000;
     private boolean doubleBackToQuitPressedOnce = false;
     private ProgressDialog progressDialog;
     private Handler handler;
-    private List<TextInputElement> textInputElements;
+    private TextInputElement tieAlphabet, tieWordSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class InputActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         this.initInputFields();
+        this.loadSavedPreferences();
         this.progressDialog = this.createProgressDialog();
         this.handler = new Handler();
 
@@ -89,30 +94,49 @@ public class InputActivity extends AppCompatActivity {
                 , TIME_INTERVAL);
     }
 
-    private void initInputFields() {
-        this.textInputElements = new ArrayList<>();
+    @Override
+    protected void onPause() {
+        super.onPause();
+        final SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        editor.putString(KEY_PREF_ALPHABET, this.tieAlphabet.getInput());
+        editor.putString(KEY_PREF_WORD_SIZE, this.tieWordSize.getInput());
+        editor.apply();
+    }
 
+    private void initInputFields() {
         final EditText etAlphabet = (EditText) findViewById(R.id.et_alphabet);
         final TextInputLayout tilAlphabet = (TextInputLayout) findViewById(R.id.til_alphabet);
-        final TextInputElement tieAlphabet = new TextInputElement(getString(R.string.et_error_alphabet), etAlphabet, tilAlphabet);
+        this.tieAlphabet = new TextInputElement(getString(R.string.et_error_alphabet), etAlphabet, tilAlphabet);
         etAlphabet.addTextChangedListener(new TextInputElementWatcher(tieAlphabet));
-        this.textInputElements.add(tieAlphabet);
 
         final EditText etWordSize = (EditText) findViewById(R.id.et_word_size);
         final TextInputLayout tilWordSize = (TextInputLayout) findViewById(R.id.til_word_size);
-        final TextInputElement tieWordSize = new TextInputElement(getString(R.string.et_error_word_size), etWordSize, tilWordSize);
+        this.tieWordSize = new TextInputElement(getString(R.string.et_error_word_size), etWordSize, tilWordSize);
         etWordSize.addTextChangedListener(new TextInputElementWatcher(tieWordSize));
-        this.textInputElements.add(tieWordSize);
+    }
+
+    private void loadSavedPreferences() {
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        final String alphabetValue = prefs.getString(KEY_PREF_ALPHABET, StringUtils.EMPTY);
+        final String wordSizeValue = prefs.getString(KEY_PREF_WORD_SIZE, StringUtils.EMPTY);
+        if(!StringUtils.isEmpty(alphabetValue)) this.tieAlphabet.setInput(alphabetValue);
+        if(!StringUtils.isEmpty(wordSizeValue)) this.tieWordSize.setInput(wordSizeValue);
     }
 
     private boolean isInputValid() {
+        final List<TextInputElement> elementList = new ArrayList<TextInputElement>() {
+            {
+                add(tieAlphabet);
+                add(tieWordSize);
+            }
+        };
 
-        final Optional<TextInputElement> firstInvalidElement = this.textInputElements.stream()
+        final Optional<TextInputElement> firstInvalidElement = elementList.stream()
                 .filter(e -> !e.isValid())
                 .findFirst();
 
         if(firstInvalidElement.isPresent()) {
-            this.textInputElements.stream()
+            elementList.stream()
                     .filter(e -> !e.isValid())
                     .forEach(TextInputElement::showValidationError);
             firstInvalidElement.get().setFocus();

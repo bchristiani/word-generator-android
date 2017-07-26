@@ -59,6 +59,10 @@ public class TextInputElement {
         return this.editText.getText().toString();
     }
 
+    public void setInput(final String text) {
+        this.editText.setText(text);
+    }
+
     public void setFocus() {
         this.editText.requestFocus();
     }
