@@ -69,11 +69,14 @@ public class InputActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        final int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
-            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                return true;
+            case R.id.action_app_info:
+                startActivity(new Intent(getApplicationContext(), InfoActivity.class));
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

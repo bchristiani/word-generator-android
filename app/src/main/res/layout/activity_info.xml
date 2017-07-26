@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.christiani.benjamin.wordgen.activities.InfoActivity"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/info_headline"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="46sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        style="@style/InfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/info_version"
+        android:textAlignment="center" />
+
+    <TextView
+        style="@style/InfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/info_copyright"
+        android:textAlignment="center" />
+
+    <TextView
+        style="@style/InfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/info_copyright_hint"
+        android:textAlignment="center" />
+
+</LinearLayout>

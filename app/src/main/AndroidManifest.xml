@@ -33,6 +33,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.christiani.benjamin.wordgen.activities.InputActivity" />
         </activity>
+        <activity android:name=".activities.InfoActivity"/>
     </application>
 
 </manifest>
