@@ -11,6 +11,8 @@
     <string name="title_activity_result">ResultActivity</string>
     <string name="toolbar_title_result">Wörter</string>
     <string name="progress_dialog_message">Bitte Warten...</string>
+    <string name="et_error_alphabet">Gib ein Alphabet an, aus dem die Wörter gebildet werden sollen.</string>
+    <string name="et_error_word_size">Gib an, welche Länge die gebildeten Wörter haben sollen.</string>
 
     <string-array name="results">
         <item>Ergebnis 1</item>
