@@ -55,14 +55,12 @@
         <item>50</item>
         <item>100</item>
         <item>500</item>
-        <item>1000</item>
         <item>Kein Limit</item>
     </string-array>
     <string-array name="pref_limit_values">
         <item>50</item>
         <item>100</item>
         <item>500</item>
-        <item>1000</item>
         <item>-1</item>
     </string-array>
     <string name="pref_default_value_limit">50</string>
