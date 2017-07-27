@@ -14,6 +14,7 @@
     <string name="progress_dialog_message">Bitte Warten...</string>
     <string name="et_error_alphabet">Gib Buchstaben an, aus denen die Wörter gebildet werden sollen.</string>
     <string name="et_error_word_size">Gib an, welche Länge die gebildeten Wörter haben sollen.</string>
+    <string name="key_bundle_form_input_data">formInputData</string>
 
     <string-array name="results">
         <item>Ergebnis 1</item>

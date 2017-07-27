@@ -14,7 +14,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(20 + " " + getString(R.string.toolbar_title_result));
+        toolbar.setTitle(getString(R.string.toolbar_title_result));
         setSupportActionBar(toolbar);
         final ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null) {

@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 import de.christiani.benjamin.wordgen.R;
+import de.christiani.benjamin.wordgen.common.form.FormInputData;
 import de.christiani.benjamin.wordgen.common.form.TextInputElement;
 import de.christiani.benjamin.wordgen.common.form.TextInputElementWatcher;
 
@@ -54,7 +55,11 @@ public class InputActivity extends AppCompatActivity {
                 this.progressDialog.show();
                 this.handler.postDelayed(() -> {
                     this.progressDialog.dismiss();
-                    startActivity(new Intent(getApplicationContext(), ResultActivity.class));
+                    final Bundle bundle = new Bundle();
+                    bundle.putSerializable(getString(R.string.key_bundle_form_input_data), new FormInputData(this.tieAlphabet.getInput(), this.tieWordSize.getInput()));
+                    final Intent intent = new Intent(this, ResultActivity.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }, TIME_INTERVAL);
             }
         });
