@@ -69,5 +69,5 @@
     <string name="info_headline">Info</string>
     <string name="info_version">Version 1.0</string>
     <string name="info_copyright">© 2017 Benjamin Christiani</string>
-    <string name="info_copyright_hint">All rights reserved</string>
+    <string name="info_copyright_hint">Alle Rechte vorbehalten</string>
 </resources>
