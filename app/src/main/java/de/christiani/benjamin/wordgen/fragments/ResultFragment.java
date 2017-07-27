@@ -3,18 +3,18 @@ package de.christiani.benjamin.wordgen.fragments;
 import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-
 import java.util.ArrayList;
-
 import de.christiani.benjamin.wordgen.R;
 import de.christiani.benjamin.wordgen.common.form.FormInputData;
 import de.christiani.benjamin.wordgen.common.permutation.PermutationGenerator;
+import static de.christiani.benjamin.wordgen.fragments.SettingsFragment.KEY_PREF_LIMIT;
 
 
 public class ResultFragment extends ListFragment {
@@ -36,7 +36,12 @@ public class ResultFragment extends ListFragment {
             throw new IllegalStateException("Could not serialize form input data from bundle.");
         }
 
-        final PermutationGenerator generator = new PermutationGenerator(formInputData.getAlphabet());
+        final String resultLimit = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(KEY_PREF_LIMIT, null);
+        if( resultLimit == null) {
+            throw new IllegalStateException("Could not find preference key " + KEY_PREF_LIMIT + " in shared preferences.");
+        }
+
+        final PermutationGenerator generator = new PermutationGenerator(formInputData.getAlphabet(), Integer.parseInt(resultLimit));
         final ArrayList<String> results = generator.getPermutations();
         final ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         if (actionBar!=null) actionBar.setTitle(results.size() + " " + getString(R.string.toolbar_title_result));

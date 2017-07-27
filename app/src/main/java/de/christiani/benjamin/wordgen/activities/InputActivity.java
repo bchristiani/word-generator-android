@@ -60,7 +60,7 @@ public class InputActivity extends AppCompatActivity {
                     final Intent intent = new Intent(this, ResultActivity.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
-                }, TIME_INTERVAL);
+                }, TIME_INTERVAL-1000);
             }
         });
     }
