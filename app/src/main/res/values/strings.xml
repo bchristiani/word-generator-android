@@ -9,6 +9,7 @@
     <string name="et_hint_word_length">Wortlänge *</string>
     <string name="iv_description">Sprache</string>
     <string name="toast_quit_app">Nochmaliges Tippen beendet die App</string>
+    <string name="toast_invalid_input">Prüfe deine Eingaben</string>
     <string name="title_activity_result">ResultActivity</string>
     <string name="toolbar_title_result">Wörter</string>
     <string name="progress_dialog_message">Bitte Warten...</string>

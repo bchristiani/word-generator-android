@@ -61,6 +61,8 @@ public class InputActivity extends AppCompatActivity {
                     intent.putExtras(bundle);
                     startActivity(intent);
                 }, TIME_INTERVAL-1000);
+            } else {
+                Toast.makeText(getApplicationContext(), R.string.toast_invalid_input, Toast.LENGTH_SHORT).show();
             }
         });
     }
